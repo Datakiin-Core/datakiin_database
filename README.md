@@ -1,1 +1,2 @@
 # datakiin_database
+Datakiin Database seeks to provide a platform that goes beyond simple data storage and retrieval. Using Python to help integrate data into an AI based structure to get the most of your data with meaningful insights and optimized data.
