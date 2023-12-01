@@ -9,10 +9,14 @@
     {% endassets %}
 </head>
 
+
 <body class="{{ template }}">
-<div class="login-page">
-  {% block content %}{% endblock %}
-</div>
+  <div class="login-page">
+  <header class="headerSection">
+    <h1> DATAKIIN </h1>
+  </header>
+    {% block content %}{% endblock %}
+  </div>
 </body>
 
 </html>
