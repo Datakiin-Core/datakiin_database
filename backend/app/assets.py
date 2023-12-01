@@ -10,6 +10,7 @@ def compile_static_assets(app: Flask):
     compile_javascript(assets, app)
     compile_auth_stylesheets(assets, app)
 
+#-------------------------------Home------------------------------------#
 
 def compile_stylesheets(assets: Environment, app: Flask):
     """ GENERATE CSS AT TOP LEVEL BY SOURCE"""

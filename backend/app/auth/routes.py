@@ -1,8 +1,21 @@
 """ ROUTES FOR AUTHENTICATION """
 from typing import Optional
 #pylint: disable=E0401
-from flask import Blueprint, Response, flash, redirect, render_template, request, url_for
-from flask_login import current_user, login_user, logout_user
+from flask import (
+    Blueprint,
+    Response,
+    flash,
+    redirect,
+    render_template,
+    request,
+    url_for
+    )
+
+from flask_login import (
+    current_user,
+    login_user,
+    logout_user
+    )
 
 from app.forms import LoginForm, SignupForm, UpdateForm
 from app.models import User, db
@@ -79,8 +92,10 @@ def update() -> Response:
     )
 
 
-@auth_blueprint.route("/login", methods=["GET", "POST"])
-def login() -> Response:
+
+@auth_blueprint.route('/', defaults={'path': ''})
+@auth_blueprint.route("/<path:path>", methods=["GET", "POST"])
+def login(path) -> Response:
     """
     LOG-IN PAGE
 
@@ -104,6 +119,7 @@ def login() -> Response:
 
     return render_template(
         "login.jinja2",
+        path=path,
         form=form,
         title="Log In",
         template="login-page",
